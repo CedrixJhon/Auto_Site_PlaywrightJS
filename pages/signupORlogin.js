@@ -102,18 +102,38 @@ class SignupORLoginPage {
         this.mobileNumber_text = page.getByText('Mobile Number *');
         this.mobileNumber_Field = page.getByRole('textbox', { name: 'Mobile Number *' });
         
+        //Create Account Button
+        this.createAccountButton = page.getByRole('button', { name: 'Create Account' });
+
+        //Account Created Text
+        this.accountCreatedText = page.getByRole('heading', { name: 'Account Created!' });
+
+        //Continue Button
+        this.continueButton = page.getByRole('link', { name: 'Continue' });
+
+
 
     }
+
+    //=============LOGIN====================================================//
     async clickSignupOrLoginButton() {
         await this.signupOrLoginButton.click();
     }
-    async verifynewUserSignupText() {
-        await expect(this.newUserSignupText).toBeVisible();
-    }
+
     async verifyLoginURL() {
         await expect(this.page).toHaveURL(this.signupORLoginPageUrl);
     }
-    
+    async proceedToLogin() {
+        await this.emailAddressField_Login.fill(signUpInputs.emailfill);
+        await this.passwordField_Login.fill(signUpInputs.password);
+        await this.loginButton.click();
+    }
+
+    //========SIGNUP ====================================================//
+    async verifynewUserSignupText() {
+        await expect(this.newUserSignupText).toBeVisible();
+    }
+
     async newUserSignUp_Process() {
    
         await this.nameField_Signup.fill(signUpInputs.name);
@@ -140,6 +160,7 @@ class SignupORLoginPage {
         await this.years_dropdown.selectOption(signUpInputs.year);
         await this.signupForNewsletter_checkbox.check();
         await this.receiveSpecialOffers_checkbox.check();
+        
     }
 
     //Address Information SECTION//
@@ -168,8 +189,16 @@ class SignupORLoginPage {
         await this.city_Field.fill(signUpInputs.city);
         await this.zipcode_Field.fill(signUpInputs.zipcode);
         await this.mobileNumber_Field.fill(signUpInputs.mobile_number);
+        await this.createAccountButton.click();
  
     }
+        async verifyAccountCreatedText() {
+        await expect(this.accountCreatedText).toBeVisible();
+    }
+    async clickContinueButton() {
+        await this.continueButton.click();
+    }
+
 
 }
 module.exports = {SignupORLoginPage};

@@ -1,10 +1,10 @@
 const SignUpInputs = {
-        name :'Test User',
-        emailfill:'testuser0010000@yopmail.com',
+        name :'Test User034',
+        emailfill:'testuder34567@yopmail.com',
         
         //ENTER ACCOUNT INFORMATION SECTION//
-        nameUpdate:'Test User Updated',
-        password:'Password@123',
+        nameUpdate:'Test User11',
+        password:'Password@123445',
         day:'10',
         month:'5',
         year:'1990',

@@ -8,11 +8,19 @@ test('Test Case 1: Register User',async({homePage,signupORloginPage})=>{
     await signupORloginPage.verifynewUserSignupText();
     await signupORloginPage.verifyLoginURL();
     await signupORloginPage.newUserSignUp_Process();
+    await signupORloginPage.verifyEnterAccountInformationHeader();
     await signupORloginPage.verifyOtherSectionTexts();
     await signupORloginPage.enterAccountInfo_Process();
     await signupORloginPage.verifyAddressInformationSection();
     await signupORloginPage.enterAddressInformation();
+    await signupORloginPage.verifyAccountCreatedText();
+    await signupORloginPage.clickContinueButton();
+    //await homePage.verifyLoggedinAsText();  ---FOR FIX
+    await homePage.clickDeleteAccountButton();
+    await homePage.verifyAccountDeletedText();
+    await homePage.clickContinueButton_AccountDeleted();
     
+  
 
     
     
