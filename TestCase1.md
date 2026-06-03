@@ -10,9 +10,9 @@ Test Case 1: Register User
 9. Fill details: Title, Name, Email, Password, Date of birth
 10. Select checkbox 'Sign up for our newsletter!'
 11. Select checkbox 'Receive special offers from our partners!'
-
-
 12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
+
+
 13. Click 'Create Account button'
 14. Verify that 'ACCOUNT CREATED!' is visible
 15. Click 'Continue' button

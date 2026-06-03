@@ -10,7 +10,7 @@ test('Test Case 1: Register User',async({homePage,signupORloginPage})=>{
     await signupORloginPage.newUserSignUp_Process();
     await signupORloginPage.verifyOtherSectionTexts();
     await signupORloginPage.enterAccountInfo_Process();
-   // await signupORloginPage.verifyAddressInformationSection();
+    await signupORloginPage.verifyAddressInformationSection();
     await signupORloginPage.enterAddressInformation();
     
 

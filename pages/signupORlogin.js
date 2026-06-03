@@ -63,12 +63,12 @@ class SignupORLoginPage {
         //========================================//
 
         //First Name Section
-        this.firstName_text = page.getByText('First Name *', { exact: true });
-        this.firtName_Field = page.getByRole('textbox', { name: 'First Name *'});
+        this.firstName_text = page.getByText('First name *', { exact: true });
+        this.firstName_Field = page.getByRole('textbox', { name: 'First name *'});
        
         //Last Name Section
-        this.lastName_text = page.getByText('Last Name *', { exact: true });
-        this.lastName_Field = page.getByRole('textbox', { name: 'Last Name *', exact: true });
+        this.lastName_text = page.getByText('Last name *', { exact: true });
+        this.lastName_Field = page.getByRole('textbox', { name: 'Last name *' });
 
         //Company Section
         this.company_text = page.getByText('Company', { exact: true });
@@ -88,7 +88,7 @@ class SignupORLoginPage {
 
         //State Section
         this.state_text = page.getByText('State *');
-        this.state_Field = page.getByRole('textbox', { name: 'City * Zipcode *' });
+        this.state_Field = page.getByRole('textbox', { name: 'State *' });
 
         //City Section
         this.city_text = page.getByText('City *');
@@ -157,7 +157,7 @@ class SignupORLoginPage {
         await expect(this.mobileNumber_text).toBeVisible();
     }
     async enterAddressInformation() {
-    
+        await this.firstName_Field.click();
         await this.firstName_Field.fill(signUpInputs.first_name);
         await this.lastName_Field.fill(signUpInputs.last_name);
         await this.company_Field.fill(signUpInputs.company);
@@ -168,6 +168,7 @@ class SignupORLoginPage {
         await this.city_Field.fill(signUpInputs.city);
         await this.zipcode_Field.fill(signUpInputs.zipcode);
         await this.mobileNumber_Field.fill(signUpInputs.mobile_number);
+ 
     }
 
 }
