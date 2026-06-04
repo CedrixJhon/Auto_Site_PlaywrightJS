@@ -24,6 +24,8 @@ class SignupORLoginPage {
         this.emailAddressField_Signup =  page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address');
         this.signupButton = page.getByRole('button', { name: 'Signup' });
         
+        // Email Address already Exist Message
+        this.emailAlreadyExistErrorDisplay = page.getByText('Email Address already exist!');
         //URL for Signup / Login page
         this.signupORLoginPageUrl = process.env.homeURL + '/login';
 
@@ -154,10 +156,18 @@ class SignupORLoginPage {
     }
 
     async newUserSignUp_Process() {
-   
+
         await this.nameField_Signup.fill(signUpInputs.name);
         await this.emailAddressField_Signup.fill(signUpInputs.emailfill);
         await this.signupButton.click();
+    }
+    async registerExistingUser() {
+        await this.nameField_Signup.fill(signUpInputs.validCreds_name);
+        await this.emailAddressField_Signup.fill(signUpInputs.validCreds_email);
+        await this.signupButton.click();
+    }
+    async verifyExistingUserErrorPrompt() {
+        await expect(this.emailAlreadyExistErrorDisplay).toBeVisible();
     }
 
   //Enter Account Information SECTION//

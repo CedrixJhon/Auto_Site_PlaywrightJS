@@ -7,6 +7,11 @@ const test = base.extend({
         const homePage = new HomePage(page);
         await use(homePage);
     },
+        gotoURL: async ({page}, use) => {
+        const homePage = new HomePage(page);
+        await homePage.gotoHomeURL();
+        await use(homePage);
+    },
     signupORloginPage: async ({page}, use) => {
         const signupORloginPage = new SignupORLoginPage(page);
         await use(signupORloginPage);

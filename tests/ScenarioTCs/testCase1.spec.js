@@ -1,8 +1,7 @@
 const { sign } = require('node:crypto');
-const { test, expect } = require('../fixtures/baseTest');
+const { test, expect } = require('../../fixtures/baseTest');
 
-test('Test Case 1: Register User',async({homePage,signupORloginPage})=>{ 
-    await homePage.gotoHomeURL();
+test('Test Case 1: Register User',async({gotoURL,homePage,signupORloginPage})=>{ 
     await expect(homePage.page).toHaveURL(homePage.homePageUrl);
     await signupORloginPage.clickSignupOrLoginButton();
     await signupORloginPage.verifynewUserSignupText();

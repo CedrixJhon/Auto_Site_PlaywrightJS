@@ -1,12 +1,11 @@
 const { hostname } = require('node:os');
-const { test, expect } = require('../fixtures/baseTest');
+const { test, expect } = require('../../fixtures/baseTest');
 
 test.describe('Signup and Login', () => {
 
 test.describe.configure({ mode: 'serial' });
 
-    test('SignUp User',async({homePage,signupORloginPage})=>{ 
-    await homePage.gotoHomeURL();
+    test('SignUp User',async({gotoURL,homePage,signupORloginPage})=>{ 
     await expect(homePage.page).toHaveURL(homePage.homePageUrl);
     await signupORloginPage.clickSignupOrLoginButton();
     await signupORloginPage.newUserSignUp_Process();
@@ -15,8 +14,7 @@ test.describe.configure({ mode: 'serial' });
     await signupORloginPage.clickContinueButton();
     });
 
-    test('Test Case 2: Login User with correct email and password',async({homePage,signupORloginPage})=>{ 
-    await homePage.gotoHomeURL();
+    test('Test Case 2: Login User with correct email and password',async({gotoURL,homePage,signupORloginPage})=>{ 
     await expect(homePage.page).toHaveURL(homePage.homePageUrl);
     await signupORloginPage.clickSignupOrLoginButton();
     await signupORloginPage.verifyLoginURL();

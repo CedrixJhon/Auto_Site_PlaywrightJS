@@ -2,6 +2,7 @@ const SignUpInputs = {
         //FOR LOGIN CREDENTIALS//
         validCreds_email:'testnb@yopmail.com',
         validCreds_password:'Password@123',
+        validCreds_name: 'PalanggaKoH_00',
         //VALID SIGNUP INPUTS//
         name :'Test User034',
         emailfill:'testuder34567@yopmail.com',

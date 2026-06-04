@@ -3,7 +3,7 @@ const signUpInputs = require('../dataInputs/signUpInputs');
 class HomePage {
     constructor(page) {
         this.page = page;
-        this.homePageUrl = process.env.homeURL;
+        this.homePageUrl=process.env.homeURL;
         
 
         //After Acount Creation - Logged in as
