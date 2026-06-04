@@ -1,7 +1,15 @@
 const SignUpInputs = {
+        //FOR LOGIN CREDENTIALS//
+        validCreds_email:'testnb@yopmail.com',
+        validCreds_password:'Password@123',
+        //VALID SIGNUP INPUTS//
         name :'Test User034',
         emailfill:'testuder34567@yopmail.com',
         
+        //INVALID SIGNUP INPUTS//
+        incorrectEmail:'incorrectemail@gmail.com',
+        incorrectPassword:'Incorrect@12345',
+
         //ENTER ACCOUNT INFORMATION SECTION//
         nameUpdate:'Test User11',
         password:'Password@123445',

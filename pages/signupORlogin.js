@@ -14,6 +14,8 @@ class SignupORLoginPage {
         this.passwordField_Login = page.getByPlaceholder('Password');
         this.loginButton = page.getByRole('button', { name: 'Login' });
 
+        //Incorrect Username and password Message
+        this.incorrectcredentialsErrorDisplay = page.getByText('Your email or password is incorrect!');
 
         //New User Signup Text
         this.newUserSignupText = page.getByRole('heading', { name: 'New User Signup!' });
@@ -90,7 +92,7 @@ class SignupORLoginPage {
         this.state_text = page.getByText('State *');
         this.state_Field = page.getByRole('textbox', { name: 'State *' });
 
-        //City Section
+        //City Section ====
         this.city_text = page.getByText('City *');
         this.city_Field = page.getByRole('textbox', { name: 'City *' });
 
@@ -123,10 +125,27 @@ class SignupORLoginPage {
     async verifyLoginURL() {
         await expect(this.page).toHaveURL(this.signupORLoginPageUrl);
     }
+    async proceedtoLoginAcc() {
+        await this.emailAddressField_Login.fill(signUpInputs.validCreds_email);
+        await this.passwordField_Login.fill(signUpInputs.validCreds_password);
+        await this.loginButton.click();
+    }
     async proceedToLogin() {
         await this.emailAddressField_Login.fill(signUpInputs.emailfill);
         await this.passwordField_Login.fill(signUpInputs.password);
         await this.loginButton.click();
+    }
+    async proceedToInvalidLogin() {
+        await this.emailAddressField_Login.fill(signUpInputs.incorrectEmail);
+        await this.passwordField_Login.fill(signUpInputs.incorrectPassword);
+        await this.loginButton.click();
+    }
+    async verifyLoginTOYourAccText() {
+        await expect(this.loginToYourAccountText).toBeVisible();
+        
+    }
+    async verifyIncorrectCredsDisplayed() {
+        await expect(this.incorrectcredentialsErrorDisplay).toBeVisible();
     }
 
     //========SIGNUP ====================================================//

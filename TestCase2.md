@@ -5,7 +5,7 @@ Test Case 2: Login User with correct email and password
 4. Click on 'Signup / Login' button
 5. Verify 'Login to your account' is visible
 6. Enter correct email address and password
-7. Click 'login' button
-8. Verify that 'Logged in as username' is visible
+7. Click 'login' button\
+8. Verify that 'Logged in as username' is visible  ========|||||| NEED TO ADD AS VALIDATION AS OF CURRENT, Getting an ISSUE
 9. Click 'Delete Account' button
 10. Verify that 'ACCOUNT DELETED!' is visible

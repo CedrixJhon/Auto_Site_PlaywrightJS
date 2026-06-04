@@ -16,6 +16,9 @@ class HomePage {
         //Continue Button after account deletion
         this.continueButton_AccountDeleted = page.getByRole('link', { name: 'Continue' });
 
+        //logout button
+        this.logoutButton = page.getByRole('link', { name: ' Logout' });
+
 
     }
 
@@ -34,6 +37,9 @@ class HomePage {
     async clickContinueButton_AccountDeleted() {
         await this.continueButton_AccountDeleted.click();
     }
+    async logout() {
+        await this.logoutButton.click();
+    }   
 }   
 
 module.exports = {HomePage};
