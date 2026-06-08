@@ -17,10 +17,6 @@ test('Test Case 1: Register User',async({gotoURL,homePage,signupORloginPage})=>{
     //await homePage.verifyLoggedinAsText();  ---FOR FIX
     await homePage.clickDeleteAccountButton();
     await homePage.verifyAccountDeletedText();
-    await homePage.clickContinueButton_AccountDeleted();
-    
-  
-
-    
+    await homePage.clickContinueButton_AccountDeleted();   
     
 });

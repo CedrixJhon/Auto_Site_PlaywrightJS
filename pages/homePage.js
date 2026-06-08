@@ -25,6 +25,7 @@ class HomePage {
     async gotoHomeURL() {
         await this.page.goto(this.homePageUrl);
     }
+
     async verifyLoggedinAsText() {
         await expect(this.loggedinAsText).toBeVisible();
     }
